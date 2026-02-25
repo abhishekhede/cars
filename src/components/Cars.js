@@ -12,30 +12,22 @@ const Cars = () => {
     { id: 4, name: "Toyota Corolla", year: 2015, price: 10000 },
   ];
 
+  const renderCars=(props)=>{
+    return props.map((car)=>(
+        <Vehicle key={car.id} name={car.name} year={car.year} price={car.price}/>
+    ))
+  };
+
   return (
-    <div className="car-list">
+    <div className="cars-list">
       <div className="old-cars">
         <h2>Used</h2>
-        {usedCars.map((car) => (
-          <Vehicle
-            key={car.id}
-            name={car.name}
-            year={car.year}
-            price={car.price}
-          />
-        ))}
+        {renderCars(usedCars)}
       </div>
 
       <div className="new-cars">
         <h2>New</h2>
-        {newCars.map((car) => (
-          <Vehicle
-            key={car.id}
-            name={car.name}
-            year={car.year}
-            price={car.price}
-          />
-        ))}
+        {renderCars(newCars)}
       </div>
     </div>
   );
