@@ -1,15 +1,15 @@
-import './App.css';
-import Cars from './components/Cars.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Cars from './components/Cars';
+import Details from './components/Details';
 
 function App() {
   return (
-    <div className="App">
-
-      <Cars/>
-      {/* <body> */}
-      {/* <Counter /> */}
-      {/* </body> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Cars />} />
+        <Route path="/details/:id" element={<Details />} />
+      </Routes>
+    </Router>
   );
 }
 
