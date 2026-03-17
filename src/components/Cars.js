@@ -11,10 +11,10 @@ const Cars = () => {
     { id: 3, name: "Honda Civic", year: 2018, price: 15000 },
     { id: 4, name: "Toyota Corolla", year: 2015, price: 10000 },
   ];
-
+ 
   const renderCars=(props)=>{
     return props.map((car)=>(
-        <Vehicle key={car.id} name={car.name} year={car.year} price={car.price}/>
+        <Vehicle key={car.id} id={car.id} name={car.name} year={car.year} price={car.price}/>
     ))
   };
 
